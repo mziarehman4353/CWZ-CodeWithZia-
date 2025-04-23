@@ -19,59 +19,80 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Typing effect for the logo */
-/* Typing effect for CWZ-CodeWithZia */
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 17ch; /* Adjust based on the length of the text */
-  }
-}
-
-/* Glowing effect */
+/* Glowing effect (optional) */
+/* Glowing effect (optional) */
+/* Glowing effect (optional) */
 @keyframes glowEffect {
   0% {
-    text-shadow: 0 0 10px rgba(0, 204, 255, 0.6), 0 0 20px rgba(0, 204, 255, 0.6), 0 0 30px rgba(0, 204, 255, 0.6);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.6);
   }
   50% {
-    text-shadow: 0 0 15px rgba(0, 204, 255, 0.6), 0 0 25px rgba(0, 204, 255, 0.6), 0 0 35px rgba(0, 204, 255, 0.6);
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 25px rgba(59, 130, 246, 0.6);
   }
   100% {
-    text-shadow: 0 0 10px rgba(0, 204, 255, 0.6), 0 0 20px rgba(0, 204, 255, 0.6), 0 0 30px rgba(0, 204, 255, 0.6);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.6);
   }
 }
 
-/* Style for the logo text */
-.logo-text {
-  font-size: 2rem; /* Standard size */
-  font-weight: bold;
-  color: #171717;
-  font-family: 'Arial', sans-serif;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 4s steps(16) infinite, glowEffect 3s infinite alternate;
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.5rem; /* unified font size */
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  line-height: 1.5rem;
 }
 
-/* Styling for the button */
-button {
+.logo-cwz {
+  color: white;
+}
+
+.logo-bar {
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.logo-typing-wrapper {
+  overflow: hidden;
   display: inline-block;
   position: relative;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 10px;
+  white-space: nowrap;
 }
 
-/* Hover effect */
-button:hover .logo-text {
-  transform: scale(1.05); /* Slight scale effect on hover */
+.logo-typing {
+  display: inline-block;
+  white-space: nowrap;
+  color: #3b82f6;
+  animation: typingLoop 4s steps(12) infinite, blink 0.8s step-end infinite;
+  border-right: 2px solid #3b82f6;
+  text-shadow:
+    0 0 6px #ffffff,
+    0 0 12px #ffffff,
+    1px 1px 2px rgba(0, 0, 0, 0.4); /* soft black edge for depth */
+
+}
+
+@keyframes typingLoop {
+  0%, 10% {
+    width: 0;
+  }
+  45%, 55% {
+    width: 11ch;
+  }
+  90%, 100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3b82f6;
+  }
+}
+.logo-glow {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.4);
 }
