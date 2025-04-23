@@ -24,3 +24,54 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Typing effect for the logo */
+/* Typing effect for CWZ-CodeWithZia */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 17ch; /* Adjust based on the length of the text */
+  }
+}
+
+/* Glowing effect */
+@keyframes glowEffect {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.6), 0 0 20px rgba(0, 204, 255, 0.6), 0 0 30px rgba(0, 204, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(0, 204, 255, 0.6), 0 0 25px rgba(0, 204, 255, 0.6), 0 0 35px rgba(0, 204, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.6), 0 0 20px rgba(0, 204, 255, 0.6), 0 0 30px rgba(0, 204, 255, 0.6);
+  }
+}
+
+/* Style for the logo text */
+.logo-text {
+  font-size: 2rem; /* Standard size */
+  font-weight: bold;
+  color: #171717;
+  font-family: 'Arial', sans-serif;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(16) infinite, glowEffect 3s infinite alternate;
+}
+
+/* Styling for the button */
+button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+}
+
+/* Hover effect */
+button:hover .logo-text {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
