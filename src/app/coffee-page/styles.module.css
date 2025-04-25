@@ -1,0 +1,168 @@
+.container {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9fafb;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ✨ Frosted Glass Typing Section */
+.typing {
+  background-image: url('/images/whitecoding.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.typing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25); /* Adjust overlay */
+  backdrop-filter: blur(5px); /* Softer blur */
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.typingContent {
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #3b82f6,
+    0 0 10px #3b82f6,
+    0 0 20px #3b82f6,
+    0 0 40px #60a5fa;
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow:
+      0 0 5px #3b82f6,
+      0 0 10px #3b82f6,
+      0 0 20px #3b82f6,
+      0 0 40px #60a5fa;
+  }
+  50% {
+    text-shadow:
+      0 0 8px #60a5fa,
+      0 0 16px #60a5fa,
+      0 0 30px #93c5fd,
+      0 0 50px #bfdbfe;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #3b82f6,
+      0 0 10px #3b82f6,
+      0 0 20px #3b82f6,
+      0 0 40px #60a5fa;
+  }
+}
+
+
+/* ☕ Coffee Card with Glass */
+.card {
+  background-image: url('/images/coffee.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2); /* Lower opacity */
+  backdrop-filter: blur(5px);
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  color: #111827; /* Almost black for great contrast */
+}
+
+/* 🎉 Thank You Wall Glass */
+.thankyouWall {
+  background-image: url('/images/thanks.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.thankyouWall::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.thankyouContent {
+  position: relative;
+  z-index: 1;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* 🖼️ QR Image */
+.qrImg {
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+.typing:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.thankyouWall:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
