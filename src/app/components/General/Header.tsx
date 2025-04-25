@@ -10,7 +10,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Buy Me A Coffee", href: "/coffee-page" },
-  { name: "Let's Talk", href: "#contact" },
+  { name: "Let's Talk", href: "/lets-talk" },
 ];
 
 const Header = () => {
