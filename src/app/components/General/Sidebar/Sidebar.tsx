@@ -27,7 +27,7 @@ const Sidebar = () => {
         {/* Fully transparent background */}
         <div className="h-full w-full flex flex-col justify-center p-8 space-y-4 pointer-events-auto">
           {[
-            { label: "Research", href: "#research" },
+            { label: "Research", href: "/research" },
             { label: "AI & NLP", href: "#ai" },
             { label: "Leveling Up", href: "#leveling" },
             { label: "Let’s Talk", href: "#contact" },
