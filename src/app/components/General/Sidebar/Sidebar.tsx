@@ -29,7 +29,7 @@ const Sidebar = () => {
           {[
             { label: "Research", href: "/research" },
             { label: "AI & NLP", href: "#ai" },
-            { label: "Leveling Up", href: "#leveling" },
+            { label: "Leveling Up", href: "/level-up" },
             { label: "Let’s Talk", href: "#contact" },
           ].map((item) => (
             <a
