@@ -12,26 +12,32 @@ export default function ServicesPage() {
   return (
     <LayoutWrapper>
       <main className="overflow-hidden relative">
- {/* 🧩 Section 1: Hero */}
+        {/* 🧩 Section 1: Hero */}
         <section id="hero">
           <Hero />
         </section>
-{/* 🗂 Section 2: Services Grid */}
-        <section id="services" className="py-16 px-4 sm:px-8 lg:px-16">
+
+        {/* 🗂 Section 2: Services Grid */}
+        <section id="services" className="py-6 px-4 sm:px-8 lg:px-16">
           <ServicesGrid />
         </section>
-{/* 💼 Section 3: How We Work Timeline */}
-        <section id="how-we-work" className="py-16 bg-gray-50 dark:bg-neutral-900 px-4 sm:px-8 lg:px-16">
+
+        {/* 💼 Section 3: How We Work Timeline */}
+        <section id="how-we-work" className="py-6 bg-gray-50 dark:bg-neutral-900 px-4 sm:px-8 lg:px-16">
           <HowWeWorkTimeline />
         </section>
-{/* 💬 Section 4: Testimonials + Tech Logos */}
-        <section id="testimonials" className="py-16 px-4 sm:px-8 lg:px-16">
+
+        {/* 💬 Section 4: Testimonials + Tech Logos */}
+        <section id="testimonials" className="py-6 px-4 sm:px-8 lg:px-16">
           <TestimonialsSlider />
         </section>
-{/* 📌 Sticky Call-to-Action Button */}
+
+        {/* 📌 Sticky Call-to-Action Button */}
         <StickyCTA />
-{/* 🎯 Command Palette Overlay (optional) */}
+
+        {/* 🎯 Command Palette Overlay (optional) */}
         <CommandPalette />
+        <br />
       </main>
     </LayoutWrapper>
   );

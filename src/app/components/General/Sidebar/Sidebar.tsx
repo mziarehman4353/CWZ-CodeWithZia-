@@ -28,9 +28,9 @@ const Sidebar = () => {
         <div className="h-full w-full flex flex-col justify-center p-8 space-y-4 pointer-events-auto">
           {[
             { label: "Research", href: "/research" },
-            { label: "AI & NLP", href: "#ai" },
+            { label: "Services", href: "/services" },
             { label: "Leveling Up", href: "/level-up" },
-            { label: "Let’s Talk", href: "#contact" },
+            { label: "Let’s Talk", href: "/lets-talk" },
           ].map((item) => (
             <a
               key={item.label}

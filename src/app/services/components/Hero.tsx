@@ -27,7 +27,7 @@ export default function Hero() {
           variants={fadeUp}
           className="text-lg text-muted-foreground"
         >
-          Crafting tools, platforms, and automation that fuel your growth — from web to mobile to scale.
+          Crafting tools, platforms, and automation that fuel your growth from web to mobile to scale.
         </motion.p>
 
         {/* Animated tags loop */}

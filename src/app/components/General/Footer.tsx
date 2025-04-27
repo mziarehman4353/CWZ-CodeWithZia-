@@ -27,18 +27,18 @@ const Footer = () => {
           <h4 className="font-semibold text-lg">Explore</h4>
           <div className="flex gap-4">
             <Link
-              href="/projects"
+              href="/level-up"
               className="px-4 py-2 bg-blue-700 hover:bg-blue-800 rounded-lg shadow-lg hover:shadow-blue-400 transition text-sm font-semibold"
             >
-              Projects
+              Leveling Up
             </Link>
             <a
-              href="https://www.buymeacoffee.com/yourname"
+              href="/coffee-page"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-blue-700 hover:bg-blue-800 rounded-lg shadow-lg hover:shadow-blue-400 transition text-sm font-semibold"
             >
-              Buy Me a Coffee
+              Buy me a Coffee
             </a>
           </div>
         </div>

@@ -72,8 +72,8 @@ export default function Testimonials() {
 
   return (
     <SectionReveal>
-      <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-32 max-w-screen-2xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10 text-foreground">
+      <section className="group max-w-6xl mx-auto px-6 py-20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 rounded-2xl bg-neutral-100 dark:bg-neutral-900">
+        <h2 className="text-3xl font-bold text-left mb-10 text-foreground">
           What People Say
         </h2>
 
@@ -110,18 +110,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-20 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center justify-center opacity-80">
-          {techLogos.map((logo, i) => (
-            <Image
-              key={i}
-              src={logo}
-              alt={`Tech ${i}`}
-              width={60}
-              height={60}
-              className="mx-auto grayscale hover:grayscale-0 transition duration-300"
-            />
-          ))}
-        </div>
+
       </section>
     </SectionReveal>
   );

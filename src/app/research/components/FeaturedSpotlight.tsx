@@ -12,7 +12,7 @@ const featuredResearch = {
 
 const FeaturedSpotlight = () => {
   return (
-    <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto">
+    <section className="py-10 px-2 sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

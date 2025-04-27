@@ -19,8 +19,19 @@
   }
 }
 
-/* Glowing effect (optional) */
-/* Glowing effect (optional) */
+/* Reset margin and padding for html and body */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
 /* Glowing effect (optional) */
 @keyframes glowEffect {
   0% {
@@ -34,6 +45,7 @@
   }
 }
 
+/* Logo styles */
 .logo-wrapper {
   display: flex;
   align-items: center;
@@ -42,6 +54,10 @@
   font-weight: 600;
   font-family: Arial, sans-serif;
   line-height: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .logo-cwz {
@@ -49,7 +65,7 @@
 }
 
 .logo-bar {
-  color: #3b82f6;
+  color: black;
   font-weight: 700;
 }
 
@@ -63,14 +79,13 @@
 .logo-typing {
   display: inline-block;
   white-space: nowrap;
-  color: #3b82f6;
+  color: black;
   animation: typingLoop 4s steps(12) infinite, blink 0.8s step-end infinite;
   border-right: 2px solid #3b82f6;
   text-shadow:
     0 0 6px #ffffff,
     0 0 12px #ffffff,
     1px 1px 2px rgba(0, 0, 0, 0.4); /* soft black edge for depth */
-
 }
 
 @keyframes typingLoop {
@@ -93,14 +108,9 @@
     border-color: #3b82f6;
   }
 }
+
 .logo-glow {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.4);
-}
-.logo-wrapper {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: transparent;
-  border: none;
-  cursor: pointer;
 }
 
 .logo-wrapper:hover {

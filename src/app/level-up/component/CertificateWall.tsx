@@ -15,8 +15,9 @@ const certificates = [
 
 const CertificateWall = () => {
   return (
-    <section className="py-16 overflow-hidden bg-background">
-      <h2 className="text-3xl font-bold text-center mb-10">📜 My Certificates</h2>
+    <section className="py-16 overflow-hidden bg-gray-950s bg-neutral-100 dark:bg-neutral-900">
+
+      <h2 className="text-3xl font-bold text-left mb-16 text-foreground ml-8">Certificates</h2>
 
       <div className="relative w-full overflow-hidden">
         <motion.div

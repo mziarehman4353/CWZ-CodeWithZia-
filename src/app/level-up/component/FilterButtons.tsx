@@ -30,7 +30,8 @@ const FilterButtons = () => {
   const [active, setActive] = useState('All');
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 py-14 bg-gray-950s">
+    <div className="flex flex-wrap justify-center gap-6 py-14 bg-gray-950s group max-w-6xl mx-auto px-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 rounded-2xl bg-neutral-100 dark:bg-neutral-900 ">
+
       {categories.map((category) => (
         <motion.button
           key={category}

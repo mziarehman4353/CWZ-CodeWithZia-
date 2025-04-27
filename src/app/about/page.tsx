@@ -9,16 +9,22 @@ const AboutPage = () => {
     <LayoutWrapper>
       {/* About Intro Section */}
       <AboutIntro />
+    
       {/* About Values Section */}
+      <br />
+      <br />
 
       <AboutValues />
+      <br />
 
       
       {/* About Timeline Section */}
       <AboutTimeline />
+      <br/>
       
       {/* About Tech Stack Section */}
       <AboutTechStack />
+      <br />
       
     </LayoutWrapper>
   );

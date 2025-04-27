@@ -17,18 +17,17 @@ export default function JourneyPage() {
         </section>
 
         {/* 2. Filter Buttons */}
-        <section className="w-full mt-16">
+        <section className="w-full mt-8">
           <FilterButtons />
         </section>
-
         {/* 3. Journey Timeline */}
-        <section className="w-full mt-24">
+        <section className="w-full mt-8">
           <JourneyTimeline />
         </section>
-
         {/* 4. Certificate Wall */}
-        <section className="w-full mt-24">
+        <section className="w-full mt-8">
           <CertificateWall />
+          <br />
         </section>
 
 

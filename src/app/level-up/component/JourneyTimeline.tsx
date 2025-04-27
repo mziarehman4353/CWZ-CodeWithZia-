@@ -49,8 +49,8 @@ const events = [
 
 const JourneyTimeline = () => {
   return (
-    <section className="py-16 px-4 sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto">
-      <div className="relative border-l-2 border-blue-600">
+    <section className="py-16 px-4 sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto ">
+      <div className="relative border-l-2 border-blue-600 py-14 bg-gray-950s group max-w-6xl mx-auto px-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 rounded-2xl bg-neutral-100 dark:bg-neutral-900 ">
         {events.map((event, index) => (
           <motion.div
             key={index}

@@ -53,8 +53,8 @@ const timelineData = [
 
 const ResearchTimeline = () => {
   return (
-    <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto">
-      <h2 className="text-4xl font-bold mb-12 text-center text-blue-700">
+    <section className=" sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto">
+      <h2 className="text-3xl mb-12 text-left text-black">
         Research Timeline
       </h2>
 

@@ -1,21 +1,82 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link"; 
 import SectionReveal from "@/app/components/Shared/SectionReveal";
 
 const AboutIntro = () => {
   return (
     <SectionReveal>
-      <section className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+      <section className="max-w-6xl mx-auto px-6 py-20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 rounded-2xl bg-neutral-100 dark:bg-neutral-900 flex flex-col md:flex-row items-center gap-12">
         {/* Left: Text Block */}
         <div className="md:w-2/3 text-left space-y-6">
-          <h2 className="text-4xl font-bold text-blue-500">About Me</h2>
-          <p className="text-lg text-gray-300 leading-8 bg-[#1a1a1a] p-6 rounded-2xl shadow-lg border border-gray-700">
-            Hey, I’m <span className="font-semibold text-white">Zia Ul Rehman Zafar</span> — a full-stack dev who vibes with <span className="text-blue-400">React</span>, <span className="text-blue-400">Tailwind</span>, <span className="text-blue-400">C++</span>, and <span className="text-blue-400">Python</span>.
-            Currently diving into the world of <span className="italic text-white">AI and NLP models</span>, turning ideas into real stuff that works.
-            <br /><br />
-            I’m studying <span className="font-semibold text-white">Bachelor in Informatic Engineering</span> on a full scholarship at <span className="text-blue-400">Universitas Muhammadiyah Surakarta, Indonesia</span> and always up for building cool things that matter.
-          </p>
+          <h2 className="text-3xl font-bold text-black">About Me</h2>
+
+          {/* Entire Paragraph with Hover Effect */}
+          <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-700 hover:shadow-2xl hover:border-blue-500 transition-all duration-300">
+            <p className="text-lg text-black leading-8 text-justify">
+              Hey, I’m{" "}
+              <span className="font-semibold text-black hover:text-blue-500 transition">
+                Zia Ul Rehman Zafar
+              </span>{" "}
+              a full-stack dev who vibes with{" "}
+              <Link
+                href="https://react.dev/"
+                target="_blank"
+                className="text-black font-semibold hover:text-blue-600 transition"
+              >
+                React
+              </Link>
+              ,{" "}
+              <Link
+                href="https://tailwindcss.com/"
+                target="_blank"
+                className="text-black font-semibold hover:text-blue-600 transition"
+              >
+                Tailwind
+              </Link>
+              ,{" "}
+              <Link
+                href="https://cplusplus.com/"
+                target="_blank"
+                className="text-black font-semibold hover:text-blue-600 transition"
+              >
+                C++
+              </Link>
+              , and{" "}
+              <Link
+                href="https://www.python.org/"
+                target="_blank"
+                className="text-black font-semibold hover:text-blue-600 transition"
+              >
+                Python
+              </Link>
+              .{" "}
+              Currently diving into the world of{" "}
+              <span className="italic text-black hover:text-blue-500 transition">
+                AI and NLP models
+              </span>
+              , turning ideas into real stuff that works.
+              <br />
+              Studying{" "}
+              <Link
+                href="https://www.ums.ac.id/en/study/bachelor-of-informatics-engineering"
+                target="_blank"
+                className="font-semibold text-black hover:text-blue-500 transition"
+              >
+                Bachelor in Informatics Engineering
+              </Link>{" "}
+              on a full scholarship at{" "}
+              <Link
+                href="https://www.ums.ac.id/"
+                target="_blank"
+                className="text-black font-semibold hover:text-blue-600 transition"
+              >
+                Universitas Muhammadiyah Surakarta, Indonesia
+              </Link>{" "}
+              and always up for building cool things that matter.
+            </p>
+          </div>
         </div>
 
         {/* Right: Headshot */}

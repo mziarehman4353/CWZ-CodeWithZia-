@@ -42,8 +42,8 @@ export default function ServicesGrid() {
 
   return (
     <SectionReveal>
-      <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10 text-foreground">Our Services</h2>
+      <section className="group max-w-6xl mx-auto px-6 py-20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 rounded-2xl bg-neutral-100 dark:bg-neutral-900">
+        <h2 className="text-3xl font-bold text-left mb-10 text-foreground">Our Services</h2>
         <div className="space-y-14">
           {Object.entries(groupedServices).map(([category, services]) => (
             <div key={category}>

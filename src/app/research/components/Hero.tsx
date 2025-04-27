@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const introText = "I’ve always loved practical things — and research is what lets us take ideas out of our heads and make them real.";
+const introText = "I''ve always loved practical things and research is what lets us take ideas out of our heads and make them real.";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -11,10 +11,14 @@ const Hero = () => {
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
-      setDisplayedText((prev) => prev + introText[index]);
-      index++;
-      if (index >= introText.length) clearInterval(interval);
-    }, 40); // Typing speed
+      // Only add text if the next character exists
+      if (introText.charAt(index)) {
+        setDisplayedText((prev) => prev + introText.charAt(index));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 40);
     return () => clearInterval(interval);
   }, []);
 

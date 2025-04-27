@@ -1,170 +1,98 @@
-"use client";
-import ContactCTA from './ContactCTA';
+'use client';
 
+import { useState } from 'react';
 
-import { useState } from "react";
+const ContactForm = () => {
+  const [status, setStatus] = useState<string | null>(null);
 
-const formspreeEndpoint = "https://formspree.io/f/mayrkbya"; // ✅ Real Formspree ID
-
-export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    whatsapp: "",
-    message: "",
-    service: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
 
     try {
-      const res = await fetch(formspreeEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const res = await fetch('https://formspree.io/f/your-form-id', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+        },
+        body: formData,
       });
 
       if (res.ok) {
-        setIsSubmitted(true);
-        setFormData({
-          name: "",
-          email: "",
-          whatsapp: "",
-          message: "",
-          service: "",
-        });
+        setStatus('Thanks for reaching out!');
       } else {
-        throw new Error("Form submission failed.");
+        setStatus('Oops! Something went wrong.');
       }
-    } catch (err) {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+    } catch (error) {
+      setStatus('Oops! Something went wrong.');
     }
   };
 
   return (
-    <section className="py-16 px-4 sm:px-8 md:px-16 max-w-2xl mx-auto">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-lg shadow-xl space-y-6"
-      >
-        <h2 className="text-2xl font-semibold text-white text-center">Contact Us</h2>
-
-        {isSubmitted && (
-          <div className="text-green-400 text-center font-medium">
-            Thanks! We'll get in touch soon.
-          </div>
-        )}
-
-        {error && (
-          <div className="text-red-400 text-center font-medium">{error}</div>
-        )}
-
-        {/* Name */}
-        <div className="relative">
+    <section className="w-full max-w-xl mx-auto p-8 bg-white shadow-lg rounded-lg">
+      <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
           <input
+            id="name"
             type="text"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             required
-            placeholder=" "
-            className="peer w-full bg-transparent border-b border-gray-500 focus:outline-none focus:border-blue-400 text-white px-1 py-2"
+            className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <label className="absolute left-1 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-400">
-            Name
-          </label>
         </div>
 
-        {/* Email */}
-        <div className="relative">
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
           <input
+            id="email"
             type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             required
-            placeholder=" "
-            className="peer w-full bg-transparent border-b border-gray-500 focus:outline-none focus:border-blue-400 text-white px-1 py-2"
+            className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <label className="absolute left-1 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-400">
-            Email
-          </label>
         </div>
 
-        {/* WhatsApp */}
-        <div className="relative">
+        <div>
+          <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-700">WhatsApp Number</label>
           <input
+            id="whatsapp"
             type="text"
             name="whatsapp"
-            value={formData.whatsapp}
-            onChange={handleChange}
-            placeholder=" "
-            className="peer w-full bg-transparent border-b border-gray-500 focus:outline-none focus:border-blue-400 text-white px-1 py-2"
-          />
-          <label className="absolute left-1 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-400">
-            WhatsApp Number (Optional)
-          </label>
-        </div>
-
-        {/* Message */}
-        <div className="relative">
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
             required
-            placeholder=" "
-            rows={4}
-            className="peer w-full bg-transparent border-b border-gray-500 focus:outline-none focus:border-blue-400 text-white px-1 py-2 resize-none"
+            className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <label className="absolute left-1 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-400">
-            What do you want to talk about?
-          </label>
         </div>
 
-        {/* Service Select */}
-        <div className="relative">
-          <select
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            className="w-full bg-transparent border-b border-gray-500 focus:outline-none focus:border-blue-400 text-white px-1 py-2"
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="4"
+            className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+        </div>
+
+        <div className="text-center">
+          <button
+            type="submit"
+            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-200"
           >
-            <option value="" disabled>
-              Select service type (Optional)
-            </option>
-            <option value="Portfolio">Portfolio</option>
-            <option value="E-commerce">E-commerce</option>
-            <option value="Mobile App">Mobile App</option>
-            <option value="Web Development">Web Development</option>
-            <option value="Growth/SEO">Growth & SEO</option>
-          </select>
+            Send Message
+          </button>
         </div>
 
-        {/* Submit Button */}
-        <ContactCTA isSubmitting={isSubmitting} isSubmitted={isSubmitted} />
+        {status && (
+          <div className="mt-4 text-center text-sm text-green-500">
+            {status}
+          </div>
+        )}
       </form>
     </section>
   );
-}
+};
 
-// Make sure to import ContactCTA at the top:
-// import ContactCTA from "./ContactCTA"; (adjust path if necessary)
+export default ContactForm;

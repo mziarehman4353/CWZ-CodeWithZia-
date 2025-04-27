@@ -9,26 +9,29 @@ import { motion } from 'framer-motion';
 const Page = () => {
   return (
     <LayoutWrapper>
+      <section className="w-full">
         <ContactHero />
-      <main className="flex flex-col md:flex-row gap-8 items-center justify-center px-4 md:px-16 py-12 max-w-7xl mx-auto">
-        {/* Left: Contact Form */}
+      </section>
+
+      <main className="flex flex-col md:flex-row gap-8 items-stretch justify-center px-4 md:px-16 py-12 max-w-7xl mx-auto">
+        {/* Left: Personal Touch */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="w-full md:w-1/2 hover:scale-105 transition-transform duration-300 ease-in-out flex justify-center"
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="w-full md:w-1/2 flex justify-center items-stretch"
         >
-          <ContactForm />
+          <PersonalTouch />
         </motion.div>
 
-        {/* Right: Personal Touch */}
+        {/* Right: Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="w-full md:w-1/2 hover:scale-105 transition-transform duration-300 ease-in-out flex justify-center"
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="w-full md:w-1/2 flex justify-center items-stretch"
         >
-          <PersonalTouch />
+          <ContactForm />
         </motion.div>
       </main>
     </LayoutWrapper>

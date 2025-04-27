@@ -7,7 +7,7 @@ const steps = [
   {
     title: "Free Consultation",
     description:
-      "We listen to your goals, analyze your needs, and brainstorm together — no strings attached.",
+      "We listen to your goals, analyze your needs, and brainstorm together no strings attached.",
   },
   {
     title: "Custom Solution",
@@ -17,7 +17,7 @@ const steps = [
   {
     title: "Rapid Development",
     description:
-      "Agile sprints for fast iteration — with feedback loops so you're always in the loop.",
+      "Agile sprints for fast iteration with feedback loops so you're always in the loop.",
   },
   {
     title: "Testing & Launch",
@@ -27,15 +27,15 @@ const steps = [
   {
     title: "Ongoing Support",
     description:
-      "We stay with you — updates, fixes, feature additions, and performance tracking.",
+      "We stay with you updates, fixes, feature additions, and performance tracking.",
   },
 ];
 
 export default function HowWeWorkTimeline() {
   return (
     <SectionReveal>
-      <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-32 max-w-screen-xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-16 text-foreground">
+      <section className="group max-w-6xl mx-auto px-6 py-20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 rounded-2xl bg-neutral-100 dark:bg-neutral-900">
+        <h2 className="text-3xl font-bold text-left mb-16 text-foreground pl-2">
           How We Work
         </h2>
 
