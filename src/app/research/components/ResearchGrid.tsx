@@ -68,9 +68,9 @@ const ResearchGrid = () => {
         onSelectCategory={setSelectedCategory}
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {filteredData.map((item, index) => (
+        {filteredData.map((item) => (
           <ResearchCard
-            key={index}
+            key={item.title}
             title={item.title}
             summary={item.summary}
             tags={item.tags}

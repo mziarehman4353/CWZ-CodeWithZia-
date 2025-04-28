@@ -46,8 +46,12 @@ const StickyCTA = () => {
       } else {
         throw new Error('Form submission failed');
       }
-    } catch (error) {
-      setError('Something went wrong, please try again.');
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('Something went wrong, please try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -61,13 +65,13 @@ const StickyCTA = () => {
             onClick={() => setIsOpen(false)}
             className="absolute top-2 right-2 text-sm text-gray-500 hover:text-gray-800"
           >
-            ✕
+            &times; {/* Escaped the apostrophe */}
           </button>
 
           {isSubmitted ? (
             <div className="text-center">
               <h3 className="text-lg font-semibold text-green-600">
-                ✅ Thank you! We'll contact you soon.
+                ✅ Thank you! We&apos;ll contact you soon.
               </h3>
             </div>
           ) : (

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import styles from "../styles.module.css";
 
@@ -15,7 +17,7 @@ const SupportPaymentBlock = () => {
           className={styles.qrImg}
         />
         <p className="text-center text-sm text-white mt-2">
-          Bank: 123-4567890
+          Bank: PK88SCBL0000001161805201
           <br />
           Wallet: abc@crypto
         </p>

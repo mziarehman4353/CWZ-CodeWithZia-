@@ -1,3 +1,5 @@
+'use client';
+
 // BackgroundVideo.tsx
 import React from 'react';
 

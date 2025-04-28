@@ -83,7 +83,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial, i) => (
             <motion.div
-              key={i}
+              key={testimonial.name} // Using unique 'name' for the key
               className="min-w-[300px] max-w-sm bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +110,19 @@ export default function Testimonials() {
           ))}
         </div>
 
-
+        {/* Tech Logos */}
+        <div className="mt-10 flex space-x-6">
+          {techLogos.map((logo) => (
+            <Image
+              key={logo} // Using logo URL as the unique key
+              src={logo}
+              alt="Tech Logo"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          ))}
+        </div>
       </section>
     </SectionReveal>
   );

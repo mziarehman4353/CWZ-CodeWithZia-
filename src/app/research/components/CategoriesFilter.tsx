@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 const categories = [
   'All',
@@ -9,7 +8,6 @@ const categories = [
   'NLP',
   'Social Impact',
   'UX',
-  'Translation',
   'Education',
   'Leadership',
   'Islamic Studies',

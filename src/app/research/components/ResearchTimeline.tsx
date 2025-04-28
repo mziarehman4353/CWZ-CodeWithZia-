@@ -63,8 +63,8 @@ const ResearchTimeline = () => {
         <div className="absolute left-4 top-0 h-full w-1 bg-blue-200 rounded-full"></div>
 
         <div className="space-y-16 pl-16">
-          {timelineData.map((yearItem, yearIdx) => (
-            <div key={yearIdx}>
+          {timelineData.map((yearItem) => (
+            <div key={yearItem.year}> {/* Use yearItem.year as the key */}
               {/* Year Label */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -81,14 +81,14 @@ const ResearchTimeline = () => {
 
               {/* Events for that Year */}
               <div className="space-y-10">
-                {yearItem.events.map((event, eventIdx) => (
+                {yearItem.events.map((event) => (
                   <motion.div
-                    key={eventIdx}
+                    key={event.title} 
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
                       duration: 0.6,
-                      delay: eventIdx * 0.1,
+                      delay: 0.1,
                       ease: 'easeOut',
                     }}
                     viewport={{ once: true }}

@@ -19,7 +19,7 @@ const Hero = () => {
           viewport={{ once: true }}
           className="text-sm sm:text-base text-black mb-6 tracking-wide uppercase"
         >
-          "Learning never exhausts the mind."  Leonardo da Vinci
+          &quot;Learning never exhausts the mind.&quot;  Leonardo da Vinci
         </motion.p>
 
         {/* Main Hero Heading */}

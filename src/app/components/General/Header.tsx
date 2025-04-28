@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-gradient-to-r from-sky-500/90 to-sky-400/90 backdrop-blur-sm shadow-md" : "bg-transparent"
+      scrolled ? "bg-gradient-to-r from-sky-600/90 to-sky-500/90 backdrop-blur-sm shadow-md" : "bg-transparent"
     }`}>
       <div className="flex items-center justify-between max-w-7xl mx-auto px-4 py-3">
         {/* Logo */}

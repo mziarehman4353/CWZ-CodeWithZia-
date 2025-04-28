@@ -1,3 +1,5 @@
+
+"use client";
 import LayoutWrapper from "@/app/components/General/LayoutWrapper";
 import AboutIntro from "./components/AboutIntro";
 import AboutTimeline from "./components/AboutTimeline";

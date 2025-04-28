@@ -1,3 +1,5 @@
+"use client";
+
 import LayoutWrapper from "@/app/components/General/LayoutWrapper";
 
 // Section components
@@ -6,7 +8,6 @@ import ServicesGrid from "./components/ServicesGrid";
 import HowWeWorkTimeline from "./components/HowWeWorkTimeline";
 import TestimonialsSlider from "./components/Testimonials";
 import StickyCTA from "./components/StickyCTA";
-import CommandPalette from "./components/CommandPalette";
 
 export default function ServicesPage() {
   return (
@@ -34,9 +35,6 @@ export default function ServicesPage() {
 
         {/* 📌 Sticky Call-to-Action Button */}
         <StickyCTA />
-
-        {/* 🎯 Command Palette Overlay (optional) */}
-        <CommandPalette />
         <br />
       </main>
     </LayoutWrapper>

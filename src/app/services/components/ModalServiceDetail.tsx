@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { createPortal } from "react-dom";
 import { IoClose } from "react-icons/io5";
@@ -13,13 +13,28 @@ type ModalServiceDetailProps = {
 };
 
 export default function ModalServiceDetail({ isOpen, onClose, title, content }: ModalServiceDetailProps) {
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure the code runs only on the client-side
   useEffect(() => {
-    if (isOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "auto";
-    return () => {
+    setIsClient(true);
+  }, []);
+
+  // Ensure document manipulation happens only on the client-side
+  useEffect(() => {
+    if (isOpen && isClient) {
+      document.body.style.overflow = "hidden";
+    } else if (isClient) {
       document.body.style.overflow = "auto";
+    }
+    return () => {
+      if (isClient) {
+        document.body.style.overflow = "auto";
+      }
     };
-  }, [isOpen]);
+  }, [isOpen, isClient]);
+
+  if (!isClient) return null; // Prevent rendering on the server side
 
   return createPortal(
     <AnimatePresence>

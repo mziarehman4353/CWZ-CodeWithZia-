@@ -1,8 +1,10 @@
+"use client";
+
 import Header from "./Header";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar/Sidebar";
 
-export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
+export default function LayoutWrapper({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       <Header />

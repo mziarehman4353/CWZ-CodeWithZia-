@@ -47,7 +47,7 @@ const AboutValues = () => {
             Mission
           </h3>
           <p className="text-lg text-black leading-8 text-justify">
-            To use technology as a tool for creating practical solutions that make life easier, learning accessible, and opportunities global — especially for underrepresented communities.
+            To use technology as a tool for creating practical solutions that make life easier, learning accessible, and opportunities global especially for underrepresented communities.
           </p>
         </div>
 

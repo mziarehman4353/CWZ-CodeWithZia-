@@ -8,7 +8,7 @@ type ServiceCardProps = {
   onClick: () => void;
 };
 
-export default function ServiceCard({ title, description, onClick }: ServiceCardProps) {
+export default function ServiceCard({ title, description, onClick }: Readonly<ServiceCardProps>) {
   return (
     <motion.div
       onClick={onClick}

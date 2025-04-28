@@ -68,8 +68,8 @@ export default function ServicesGrid() {
         <ModalServiceDetail
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          title={selectedService?.title || ""}
-          content={selectedService?.description || ""}
+          title={selectedService?.title ?? ""}
+          content={selectedService?.description ?? ""}
         />
       </section>
     </SectionReveal>

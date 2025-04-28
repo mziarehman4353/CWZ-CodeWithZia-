@@ -1,3 +1,5 @@
+'use client';
+
 // HeroSection.tsx
 import React from 'react';
 import BackgroundVideo from './BackgroundVideo';

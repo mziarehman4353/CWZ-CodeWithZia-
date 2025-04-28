@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image'; // ✅ Import Image from next/image
 
 const certificates = [
   '/certificates/sample1.jpg',
@@ -15,8 +16,7 @@ const certificates = [
 
 const CertificateWall = () => {
   return (
-    <section className="py-16 overflow-hidden bg-gray-950s bg-neutral-100 dark:bg-neutral-900">
-
+    <section className="py-16 overflow-hidden bg-neutral-100 dark:bg-neutral-900">
       <h2 className="text-3xl font-bold text-left mb-16 text-foreground ml-8">Certificates</h2>
 
       <div className="relative w-full overflow-hidden">
@@ -30,17 +30,18 @@ const CertificateWall = () => {
             ease: 'linear',
           }}
         >
-          {certificates.concat(certificates).map((src, index) => (
+          {certificates.concat(certificates).map((src) => (
             <motion.div
-              key={index}
+              key={src} // ✅ use src (the image path) as key instead of index
               whileHover={{ scale: 1.08 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              className="w-60 h-80 flex-shrink-0 rounded-xl overflow-hidden shadow-xl bg-white/5 backdrop-blur-md border border-white/10 cursor-pointer"
+              className="w-60 h-80 flex-shrink-0 relative rounded-xl overflow-hidden shadow-xl bg-white/5 backdrop-blur-md border border-white/10 cursor-pointer"
             >
-              <img
+              <Image
                 src={src}
-                alt={`Certificate ${index + 1}`}
-                className="object-cover w-full h-full transition-transform duration-500"
+                alt={`Certificate`}
+                fill
+                className="object-cover transition-transform duration-500"
               />
             </motion.div>
           ))}

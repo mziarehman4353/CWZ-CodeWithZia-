@@ -1,3 +1,5 @@
+'use client';
+
 export const coffeeMessages = [
   "Debugging is like being the detective of your own bugs...",
   "Every coffee = 10 lines of bug-free code",
