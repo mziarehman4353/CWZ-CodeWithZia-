@@ -15,12 +15,10 @@ type ModalServiceDetailProps = {
 export default function ModalServiceDetail({ isOpen, onClose, title, content }: ModalServiceDetailProps) {
   const [isClient, setIsClient] = useState(false);
 
-  // Ensure the code runs only on the client-side
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Ensure document manipulation happens only on the client-side
   useEffect(() => {
     if (isOpen && isClient) {
       document.body.style.overflow = "hidden";
@@ -34,7 +32,7 @@ export default function ModalServiceDetail({ isOpen, onClose, title, content }: 
     };
   }, [isOpen, isClient]);
 
-  if (!isClient) return null; // Prevent rendering on the server side
+  if (!isClient) return null;
 
   return createPortal(
     <AnimatePresence>
@@ -49,16 +47,16 @@ export default function ModalServiceDetail({ isOpen, onClose, title, content }: 
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className="relative bg-background text-foreground max-w-lg w-full p-6 rounded-xl shadow-lg"
+            className="relative bg-background text-foreground w-full max-w-lg p-6 sm:p-8 rounded-2xl shadow-2xl"
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-xl hover:text-red-500 transition"
+              className="absolute top-4 right-4 text-2xl hover:text-red-500 transition-colors"
             >
               <IoClose />
             </button>
-            <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-            <p className="text-sm text-muted-foreground">{content}</p>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">{title}</h2>
+            <p className="text-sm md:text-base text-muted-foreground">{content}</p>
           </motion.div>
         </motion.div>
       )}

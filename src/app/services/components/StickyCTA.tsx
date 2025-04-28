@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState,} from 'react';
 
 const StickyCTA = () => {
   const [formData, setFormData] = useState({
@@ -12,14 +12,9 @@ const StickyCTA = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isOpen, setIsOpen] = useState(true); // auto-open on load
+  const [isOpen, setIsOpen] = useState(true);
 
   const formspreeEndpoint = 'https://formspree.io/f/{form-id}'; // Replace {form-id}
-
-  useEffect(() => {
-    // Auto-open logic (already default in useState)
-    setIsOpen(true);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -60,12 +55,13 @@ const StickyCTA = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 w-[22rem] max-w-[90vw] transition-all duration-500 ease-in-out">
       {isOpen ? (
-        <div className="relative bg-white shadow-xl rounded-lg p-6">
+        <div className="relative bg-white shadow-2xl rounded-2xl p-6 space-y-4">
+          {/* Minimize Button */}
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-2 right-2 text-sm text-gray-500 hover:text-gray-800"
+            className="absolute top-2 right-2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full px-3 py-1"
           >
-            &times; {/* Escaped the apostrophe */}
+            Minimize
           </button>
 
           {isSubmitted ? (
@@ -75,9 +71,9 @@ const StickyCTA = () => {
               </h3>
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
-              <h2 className="text-xl font-semibold mb-4">Get in Touch</h2>
-              {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <h2 className="text-2xl font-bold text-center">Get in Touch</h2>
+              {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
               <input
                 type="text"
@@ -86,7 +82,7 @@ const StickyCTA = () => {
                 onChange={handleChange}
                 placeholder="Your Name"
                 required
-                className="w-full mb-3 px-4 py-2 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
               />
               <input
                 type="email"
@@ -95,7 +91,7 @@ const StickyCTA = () => {
                 onChange={handleChange}
                 placeholder="Your Email"
                 required
-                className="w-full mb-3 px-4 py-2 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
               />
               <input
                 type="text"
@@ -104,13 +100,13 @@ const StickyCTA = () => {
                 onChange={handleChange}
                 placeholder="Your WhatsApp Number"
                 required
-                className="w-full mb-4 px-4 py-2 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
               />
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full py-2 text-white rounded-lg ${
+                className={`w-full py-2 text-white text-sm rounded-lg ${
                   isSubmitting ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
                 }`}
               >
@@ -122,9 +118,9 @@ const StickyCTA = () => {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg shadow-lg"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg text-sm sm:text-base"
         >
-          Book a Free Call
+           Book a Free Call
         </button>
       )}
     </div>

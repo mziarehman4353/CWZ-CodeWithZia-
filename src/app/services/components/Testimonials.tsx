@@ -38,15 +38,6 @@ const testimonials = [
   },
 ];
 
-const techLogos = [
-  "/logos/react.svg",
-  "/logos/tailwind.svg",
-  "/logos/flutter.svg",
-  "/logos/github.svg",
-  "/logos/firebase.svg",
-  "/logos/nextjs.svg",
-];
-
 export default function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -109,20 +100,7 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
-
-        {/* Tech Logos */}
-        <div className="mt-10 flex space-x-6">
-          {techLogos.map((logo) => (
-            <Image
-              key={logo} // Using logo URL as the unique key
-              src={logo}
-              alt="Tech Logo"
-              width={48}
-              height={48}
-              className="object-contain"
-            />
-          ))}
-        </div>
+        
       </section>
     </SectionReveal>
   );

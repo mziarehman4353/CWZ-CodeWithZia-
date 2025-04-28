@@ -7,25 +7,26 @@ export default function Hero() {
   const tags = ["#DevOps", "#Web3 Ready", "#Ecom Experts"];
 
   return (
-    <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 py-12 bg-gradient-to-b from-background to-muted">
+    <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 py-16 bg-gradient-to-b from-background to-muted">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="space-y-6 max-w-3xl"
+        className="space-y-8 max-w-4xl"
       >
         <motion.h1
           variants={fadeUp}
-          className="text-4xl sm:text-5xl font-bold text-foreground"
+          className="text-3xl sm:text-5xl font-bold text-foreground leading-tight"
         >
-          We Build Digital Power. <br className="hidden sm:block" />
+          We Build Digital Power.
+          <br className="hidden sm:block" />
           You Just Launch It.
         </motion.h1>
 
         <motion.p
           variants={fadeUp}
-          className="text-lg text-muted-foreground"
+          className="text-base sm:text-lg text-muted-foreground"
         >
           Crafting tools, platforms, and automation that fuel your growth from web to mobile to scale.
         </motion.p>
@@ -33,7 +34,7 @@ export default function Hero() {
         {/* Animated tags loop */}
         <motion.div
           variants={fadeUp}
-          className="flex justify-center gap-4 mt-4 overflow-hidden"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-6 overflow-hidden"
         >
           {tags.map((tag, i) => (
             <motion.span
@@ -49,7 +50,7 @@ export default function Hero() {
                 repeatDelay: 0.5,
                 delay: i * 1.2,
               }}
-              className="bg-blue-600/10 border border-blue-500 text-blue-500 px-4 py-1 rounded-full text-sm font-medium"
+              className="bg-blue-600/10 border border-blue-500 text-blue-500 px-4 py-2 rounded-full text-sm sm:text-base font-medium"
             >
               {tag}
             </motion.span>
