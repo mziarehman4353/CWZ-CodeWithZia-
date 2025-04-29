@@ -1,4 +1,5 @@
 "use client";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react";
 import LayoutWrapper from "@/app/components/General/LayoutWrapper";
 import HeroSection from "@/app/components/Hero/HeroSection"; // Import the Hero section
@@ -36,6 +37,7 @@ export default function Home() {
 
       {/* Add Analytics for page tracking */}
       <Analytics />
+      <SpeedInsights />
       
       <br />
       <br />
