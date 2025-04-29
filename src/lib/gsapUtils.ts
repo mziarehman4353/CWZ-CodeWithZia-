@@ -3,15 +3,19 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register plugin only once (only in browser)
+// Register plugin only once
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-// Hook to reveal elements on scroll with fade and Y offset
-export const useGsapReveal = (selector: string, options = {}) => {
+// Hook to reveal on scroll (fade + slight Y movement)
+export const useGsapReveal = (
+  selector: string,
+  options: ScrollTrigger.Vars = {}
+) => {
+
   useEffect(() => {
-    const elements = gsap.utils.toArray(selector) as Element[];
+    const elements = gsap.utils.toArray<HTMLElement>(selector);
 
     elements.forEach((el) => {
       gsap.fromTo(
