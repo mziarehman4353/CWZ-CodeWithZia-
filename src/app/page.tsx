@@ -1,46 +1,43 @@
 "use client";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import LayoutWrapper from "@/app/components/General/LayoutWrapper";
-import HeroSection from "@/app/components/Hero/HeroSection"; // Import the Hero section
+import HeroSection from "@/app/components/Hero/HeroSection";
 import AboutValues from "./about/components/AboutValues";
 import ResearchGrid from "./research/components/ResearchGrid";
 import ServicesGrid from "./services/components/ServicesGrid";
 import HowWeWorkTimeline from "./services/components/HowWeWorkTimeline";
-import PersonalTouch from './research/components/PersonalTouch';
+import PersonalTouch from "./research/components/PersonalTouch";
 
 export default function Home() {
   return (
     <LayoutWrapper>
-      <HeroSection /> {/* Fullscreen video + animated typing */}
+      <HeroSection />
 
-      <section className="w-full mt-6">
-        <AboutValues />
-      </section>
+      <div className="px-4 sm:px-6 md:px-8 max-w-screen-xl mx-auto space-y-12 mt-6">
+        <section>
+          <AboutValues />
+        </section>
 
-      <section className="w-full mt-6">
-        <ResearchGrid />
-      </section>
+        <section>
+          <ResearchGrid />
+        </section>
 
-      <section className="w-full mt-6">
-        <ServicesGrid />
-      </section>
+        <section>
+          <ServicesGrid />
+        </section>
 
-      {/* 💼 Section 3: How We Work Timeline */}
-      <section className="w-full mt-6">
-        <HowWeWorkTimeline />
-      </section>
+        <section>
+          <HowWeWorkTimeline />
+        </section>
 
-      <section className="w-full mt-6">
-        <PersonalTouch />
-      </section>
+        <section>
+          <PersonalTouch />
+        </section>
+      </div>
 
-      {/* Add Analytics for page tracking */}
       <Analytics />
       <SpeedInsights />
-      
-      <br />
-      <br />
     </LayoutWrapper>
   );
 }
